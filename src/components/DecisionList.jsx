@@ -1,4 +1,3 @@
-// components/DecisionList.jsx (Enhanced Version)
 import React from 'react';
 
 function DecisionList({ decisions, viewDecision, setCurrentView }) {
@@ -11,7 +10,6 @@ function DecisionList({ decisions, viewDecision, setCurrentView }) {
             );
         }
 
-        // For decided items with reflection
         if (decision.reflection) {
             switch (decision.reflection) {
                 case 'good':
@@ -40,7 +38,6 @@ function DecisionList({ decisions, viewDecision, setCurrentView }) {
             }
         }
 
-        // Decided but no reflection yet
         return (
             <span className="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">
                 Decided

@@ -1,4 +1,3 @@
-// components/DecisionDetail.jsx (Improved Version)
 import React, { useState } from 'react';
 
 function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentView }) {
@@ -36,7 +35,6 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
         setShowReflectionForm(false);
     };
 
-    // Format date for display
     const formattedDate = new Date(decision.dateCreated).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
@@ -174,8 +172,8 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
                                     <button
                                         type="button"
                                         className={`px-3 py-1 rounded-full text-sm ${formData.reflection === 'good'
-                                                ? 'bg-green-500 text-white'
-                                                : 'bg-green-100 text-green-800'
+                                            ? 'bg-green-500 text-white'
+                                            : 'bg-green-100 text-green-800'
                                             }`}
                                         onClick={() => handleReflection('good')}
                                     >
@@ -184,8 +182,8 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
                                     <button
                                         type="button"
                                         className={`px-3 py-1 rounded-full text-sm ${formData.reflection === 'unsure'
-                                                ? 'bg-yellow-500 text-white'
-                                                : 'bg-yellow-100 text-yellow-800'
+                                            ? 'bg-yellow-500 text-white'
+                                            : 'bg-yellow-100 text-yellow-800'
                                             }`}
                                         onClick={() => handleReflection('unsure')}
                                     >
@@ -194,8 +192,8 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
                                     <button
                                         type="button"
                                         className={`px-3 py-1 rounded-full text-sm ${formData.reflection === 'bad'
-                                                ? 'bg-red-500 text-white'
-                                                : 'bg-red-100 text-red-800'
+                                            ? 'bg-red-500 text-white'
+                                            : 'bg-red-100 text-red-800'
                                             }`}
                                         onClick={() => handleReflection('bad')}
                                     >
@@ -274,8 +272,8 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
                             <button
                                 type="button"
                                 className={`px-3 py-1 rounded-full text-sm ${formData.reflection === 'good'
-                                        ? 'bg-green-500 text-white'
-                                        : 'bg-green-100 text-green-800'
+                                    ? 'bg-green-500 text-white'
+                                    : 'bg-green-100 text-green-800'
                                     }`}
                                 onClick={() => handleReflection('good')}
                             >
@@ -284,8 +282,8 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
                             <button
                                 type="button"
                                 className={`px-3 py-1 rounded-full text-sm ${formData.reflection === 'unsure'
-                                        ? 'bg-yellow-500 text-white'
-                                        : 'bg-yellow-100 text-yellow-800'
+                                    ? 'bg-yellow-500 text-white'
+                                    : 'bg-yellow-100 text-yellow-800'
                                     }`}
                                 onClick={() => handleReflection('unsure')}
                             >
@@ -294,8 +292,8 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
                             <button
                                 type="button"
                                 className={`px-3 py-1 rounded-full text-sm ${formData.reflection === 'bad'
-                                        ? 'bg-red-500 text-white'
-                                        : 'bg-red-100 text-red-800'
+                                    ? 'bg-red-500 text-white'
+                                    : 'bg-red-100 text-red-800'
                                     }`}
                                 onClick={() => handleReflection('bad')}
                             >
@@ -417,7 +415,7 @@ function DecisionDetail({ decision, updateDecision, deleteDecision, setCurrentVi
                         <div className="mb-6">
                             <div className="flex items-center mb-2">
                                 <span className={`w-3 h-3 rounded-full mr-2 ${decision.reflection === 'good' ? 'bg-green-500' :
-                                        decision.reflection === 'unsure' ? 'bg-yellow-500' : 'bg-red-500'
+                                    decision.reflection === 'unsure' ? 'bg-yellow-500' : 'bg-red-500'
                                     }`}></span>
                                 <h4 className="font-medium text-gray-700">
                                     {decision.reflection === 'good' ? 'No regrets' :

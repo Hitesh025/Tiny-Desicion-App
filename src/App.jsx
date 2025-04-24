@@ -10,12 +10,11 @@ import ConfirmDialog from './components/ConfirmDialog';
 
 function App() {
   const [decisions, setDecisions] = useState(() => {
-    // Load decisions from localStorage if available
     const savedDecisions = localStorage.getItem('decisions');
     return savedDecisions ? JSON.parse(savedDecisions) : [];
   });
 
-  const [currentView, setCurrentView] = useState('list'); // 'list', 'form', 'detail'
+  const [currentView, setCurrentView] = useState('list');
   const [selectedDecision, setSelectedDecision] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState({
@@ -30,7 +29,6 @@ function App() {
     message: ''
   });
 
-  // Calculate statistics
   const stats = {
     total: decisions.length,
     decided: decisions.filter(d => d.isDecided).length,
@@ -40,7 +38,6 @@ function App() {
     badDecisions: decisions.filter(d => d.reflection === 'bad').length
   };
 
-  // Save decisions to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem('decisions', JSON.stringify(decisions));
   }, [decisions]);
@@ -80,14 +77,11 @@ function App() {
     setCurrentView('detail');
   };
 
-  // Filter and sort decisions based on search query and filters
   const filteredDecisions = decisions.filter(decision => {
-    // Filter by search query
     if (searchQuery && !decision.title.toLowerCase().includes(searchQuery.toLowerCase())) {
       return false;
     }
 
-    // Filter by status
     if (filters.status === 'decided' && !decision.isDecided) {
       return false;
     }
@@ -95,7 +89,6 @@ function App() {
       return false;
     }
 
-    // Filter by reflection (only applies to decided decisions)
     if (filters.status === 'decided' && filters.reflection !== 'all') {
       if (filters.reflection === 'none' && decision.reflection) {
         return false;
@@ -106,7 +99,6 @@ function App() {
 
     return true;
   }).sort((a, b) => {
-    // Sort by date
     if (filters.sort === 'newest') {
       return new Date(b.dateCreated) - new Date(a.dateCreated);
     } else {

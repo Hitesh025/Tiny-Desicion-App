@@ -11,7 +11,7 @@ function DecisionForm({ addDecision, existingDecision, setCurrentView }) {
             isDecided: false,
             finalChoice: '',
             explanation: '',
-            reflection: null, // null, 'good', 'unsure', 'bad'
+            reflection: null,
             reflectionNote: ''
         }
     );

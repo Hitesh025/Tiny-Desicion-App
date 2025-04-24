@@ -1,4 +1,3 @@
-// components/MobileNav.jsx
 import React from 'react';
 
 function MobileNav({ currentView, setCurrentView, stats }) {
